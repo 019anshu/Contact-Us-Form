@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="static\style.css">
+    <style> 
+      .contact-form
+      {
+        width: 85%;
+        max-width: 450px;
+        background: #fdd052;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        padding: 30px 40px;
+        box-sizing: border-box;
+        border-radius: 8px;
+        text-align: center;
+        box-shadow: 0 0 20px #000000b3;
+        font-family: "Montserrat",sans-serif; 
+      }
+
+      .contact-form h1
+      {
+        margin-top: 0;
+        font-weight: 500;
+        font-family: cursive;
+      }
+
+      .txtb 
+      {
+        display: block;
+        margin: 8px 0;
+        padding: 4px;
+        width: 100%;
+        text-align: center;
+        color: #333;
+        text-transform: uppercase;
+        font-size: 14px;
+        font-weight: bold;
+        font-family: sans-serif;
+      }
+    
+      .alert
+      {
+        padding: 5px;
+        background-color: #006400;
+        color: white;
+        opacity: 0.5;
+        box-sizing: border-box;
+        border-radius: 8px;
+        margin-bottom: 7px;
+        text-align: center;
+        font-family: "Montserrat",sans-serif;
+        box-shadow: 0 0 20px #000000b3;
+      }
+
+      .alert h1
+      {
+        margin-top: 0;
+        font-size: 15px;
+      }
+      .closebtn
+      {
+        margin-left: 15px;
+        color: white;
+        font-weight: bold;
+        float: right;
+        font-size: 22px;
+        line-height: 20px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      .closebtn:hover 
+      {
+        color:black;
+      }
+    </style>
+  </head>
+
+    {% for message in get_flashed_messages() %}
+        <div class="alert alert-success" role = "alert">
+          <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+          <!--  <button type="button" class="close" data-dismiss="alert">&times;</button> -->
+            <h1>{{ message }}<h1>
+        </div>
+    {% endfor %}
+  {% block body %}{% endblock %}
+</html>

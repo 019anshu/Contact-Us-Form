@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+  {% block body %}
+    <form id="contact" action="" method="POST" class="contact-form" role="form">
+  
+      <h1>Contact Us</h1>
+      <div class="txtb">
+        {{ form.name.label }}
+        {{ form.name() }}
+        <br>
+      </div>
+  
+      <div class="txtb">
+        {{ form.email.label }} 
+        {{ form.email() }}
+        <br>
+      </div>
+  
+      <div class="txtb">
+        {{ form.subject.label }}
+        {{ form.subject() }}
+        <br>
+      </div>
+  
+      <div class="txtb">
+        {{ form.query.label }}
+        {{ form.query() }}
+        <br>  
+      </div>
+  
+      <div class="txtb" onclick="submit()">
+        {{ form.submit() }}
+      </div>
+  
+    </form>
+  {% endblock %} 
